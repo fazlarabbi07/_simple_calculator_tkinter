@@ -1,6 +1,9 @@
 from tkinter import *
 root=Tk()
 root.title("Simple Calculator using tkinter")
+root.iconbitmap('icon.ico')
+button_quite=Button(root,text="Exit Program",command=root.quit)
+button_quite.grid(row=5,column=0)
 e=Entry(root, width=70,borderwidth=10)
 e.grid(row=0,column=0,columnspan=4)
 #when the first Button is Clicked (Numeric)

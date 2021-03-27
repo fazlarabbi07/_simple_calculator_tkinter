@@ -21,10 +21,11 @@ def button_add_clicked():
 def button_sub_clicked():
     nunu=e.get()
     global sys
-    sys="subtraction"
+    sys="subtraction" 
     global first_number
     first_number=int(nunu)
     e.delete(0,END)
+ #button mul is clicked
 def button_mul_clicked():
     nunu=e.get()
     global sys
@@ -32,6 +33,7 @@ def button_mul_clicked():
     global first_number
     first_number=int(nunu)
     e.delete(0,END)
+#button div is clicked
 def button_div_clicked():
     nunu=e.get()
     global sys
@@ -39,6 +41,7 @@ def button_div_clicked():
     global first_number
     first_number=int(nunu)
     e.delete(0,END)
+#Button Equal is clicked
 def button_equal_clicked():
     
     nunu2=e.get()

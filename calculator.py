@@ -3,21 +3,55 @@ root=Tk()
 root.title("Simple Calculator using tkinter")
 e=Entry(root, width=70,borderwidth=10)
 e.grid(row=0,column=0,columnspan=4)
+#when the first Button is Clicked (Numeric)
 def button_click(number):
     num=e.get()
     e.delete(0,END)
     e.insert(0,str(num)+str(number))
+#button add is clicked
 def button_add_clicked():
     nunu=e.get()
+    global sys
+    sys="addition"
+    global first_number
+    first_number=int(nunu)
+    e.delete(0,END)
+
+#button sub is clicked
+def button_sub_clicked():
+    nunu=e.get()
+    global sys
+    sys="subtraction"
+    global first_number
+    first_number=int(nunu)
+    e.delete(0,END)
+def button_mul_clicked():
+    nunu=e.get()
+    global sys
+    sys="multiplication"
+    global first_number
+    first_number=int(nunu)
+    e.delete(0,END)
+def button_div_clicked():
+    nunu=e.get()
+    global sys
+    sys="division"
     global first_number
     first_number=int(nunu)
     e.delete(0,END)
 def button_equal_clicked():
-    #global second_number
+    
     nunu2=e.get()
     second_number=int(nunu2)
     e.delete(0,END)
-    e.insert(0,first_number+second_number)
+    if(sys=="addition"):
+        e.insert(0,first_number+second_number)
+    elif(sys=="subtraction"):
+         e.insert(0,first_number-second_number)
+    elif(sys=="multiplication"):
+         e.insert(0,first_number*second_number)
+    elif(sys=="division"):
+         e.insert(0,first_number/second_number)
 
 
 #Button Creation
@@ -35,9 +69,9 @@ button9=Button(root,text="9",padx=45,pady=20,command=lambda:button_click(9))
 button0=Button(root,text="0",padx=45,pady=20,command=lambda:button_click(0))
 
 button_add=Button(root,text="+",padx=45,pady=20,command=button_add_clicked)
-button_sub=Button(root,text="-",padx=45,pady=20)
-button_mul=Button(root,text="*",padx=45,pady=20)
-button_div=Button(root,text="/",padx=45,pady=20)
+button_sub=Button(root,text="-",padx=45,pady=20,command=button_sub_clicked)
+button_mul=Button(root,text="*",padx=45,pady=20,command=button_mul_clicked)
+button_div=Button(root,text="/",padx=45,pady=20,command=button_div_clicked)
 button_equal=Button(root,text="=",padx=45,pady=20,command=button_equal_clicked)
 button_dot=Button(root,text=".",padx=45,pady=20)
 
